@@ -6,19 +6,42 @@
     <title>Calculator</title>
 </head>
 <body>
-<input type="number" id="num1">
-<input type="number" id="num2">
-<button id="b1" onclick="add()">Addition</button>
-<button id="b2" onclick="sub()">Substraction</button>
-<button id="b3" onclick="div()">Divide</button>
-<button id="b4" onclick="mul()">Multiplication</button>
-<button>submit</button>
+<input type="text" id="num1">
+<input type="text" id="num2">
+<button  onclick="b1()">Addition</button>
+<button  onclick="b2()">Substraction</button>
+<button  onclick="b3()">Divide</button>
+<button  onclick="b4()">Multiplication</button>
+
 </body>
 </html>
 <script>
    let number1=document.getElementById("num1");
    let number2=document.getElementById("num2");
-   function add(){
-    console.log(num1+num2)
+ 
+
+   function b1(){
+   let inp1= number1.value;
+  let inp2= number2.value;
+     let res=+inp1 + +inp2;
+     alert(res)
+   }
+   function b2(){
+   let inp1= number1.value;
+  let inp2= number2.value;
+     let res=+inp1 - +inp2;
+     alert(res)
+   }
+   function b4(){
+   let inp1= number1.value;
+  let inp2= number2.value;
+     let res=+inp1 * +inp2;
+     alert(res)
+   }
+   function b3(){
+   let inp1= number1.value;
+  let inp2= number2.value;
+     let res=+inp1 / +inp2;
+     alert(res)
    }
 </script>
