@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>leadersboard</title>
+</head>
+<style>
+   
+    .keys{
+        display:grid;
+        grid-template-columns: repeat(3,40px);
+        justify-content: center;
+        gap: 10px;
+       
+    }
+    .data{
+        justify-content: space-between;
+        display: flex;
+        margin: auto;
+        width: 50%;
+    
+    }
+   .data>div{
+    border: 1px solid black;
+    padding:30px;
+
+   }
+   .cont{
+    margin:auto;
+    width:70%;
+    margin-top: 40px;
+   }
+   #score
+   {
+    color: blue;
+    font-size: 18px;
+   }
+</style>
+<body>
+   <div class="data">
+    <div id="min"  style="background-color:red" >43</div>
+    <div id="max" style="background-color:green">2019</div>
+   </div>
+   <div class="cont">
+    <div id="score"></div>
+
+    <div class="keys">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>0</button>
+        </div>
+   </div>
+   <button id="b1">Enter</button>
+</body>
+</html>
+<script>
+    let min=document.getElementById("min");
+    let max=document.getElementById("max");
+    let score=document.getElementById("score")
+    let keys=document.querySelectorAll(".keys>button")
+    let button=document.getElementById("b1")
+    for(let i =0;i <keys.length;i ++)
+    {
+        keys[i].addEventListener("click", function(){
+            score.innerText+=keys[i].innerText;
+
+
+        })
+    }
+    button.addEventListener("click" , function(){
+        if((min.innerText) > (score.innerText))
+        {
+            min.innerText=score.innerText;
+            score.innerText="";
+        }
+    if((score.innerText)>(max.innerText))
+    {
+        max.innerText=score.innerText;
+    }
+
+    })
+
+</script>
